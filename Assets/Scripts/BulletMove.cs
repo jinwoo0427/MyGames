@@ -79,7 +79,7 @@ public class BulletMove : MonoBehaviour
     {
        
         gameObject.SetActive(false);
-        transform.SetParent(GameManager.instance.poolManager.transform, false);
+        transform.SetParent(GameManager.Instance.poolManager.transform, false);
     }
 
     protected virtual void SetBulletMode(BULLET_MODE bulletMode = BULLET_MODE.PLAYER)
@@ -92,12 +92,12 @@ public class BulletMove : MonoBehaviour
         if (bulletMode == BULLET_MODE.PLAYER)
         {
             spriteRenderer.sprite = playerBulletSprite;
-            gameObject.layer = GameManager.instance.PLAYER_LAYER;
+            gameObject.layer = GameManager.Instance.PLAYER_LAYER;
         }
         else 
         {
             spriteRenderer.sprite = enemyBulletSprite;
-            gameObject.layer = GameManager.instance.ENEMY_LAYER;
+            gameObject.layer = GameManager.Instance.ENEMY_LAYER;
         }
         
     }
@@ -106,11 +106,11 @@ public class BulletMove : MonoBehaviour
     {
         
         
-            if (transform.localPosition.x < GameManager.instance.MinPosition.x - 2f || transform.localPosition.x > GameManager.instance.MaxPosition.x + 2f)
+            if (transform.localPosition.x < GameManager.Instance.MinPosition.x - 2f || transform.localPosition.x > GameManager.Instance.MaxPosition.x + 2f)
             {
                 Despawn();
             }
-            if (transform.localPosition.y < GameManager.instance.MinPosition.y - 5f || transform.localPosition.y > GameManager.instance.MaxPosition.y + 5f)
+            if (transform.localPosition.y < GameManager.Instance.MinPosition.y - 5f || transform.localPosition.y > GameManager.Instance.MaxPosition.y + 5f)
             {
                 Despawn();
             }

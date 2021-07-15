@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoSingleton<GameManager>
 {
     public Vector2 MinPosition { get; private set; }
     public Vector2 MaxPosition { get; private set; }
 
-    public static GameManager instance;
+    
     public readonly int PLAYER_LAYER = 8;
     public readonly int ENEMY_LAYER = 9;
     public int coin;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         playermove = FindObjectOfType<Playermove>();
-        instance = this;
+        
        
     }
     void Start()

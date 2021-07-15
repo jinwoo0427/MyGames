@@ -45,11 +45,11 @@ public class EnemyMove : MonoBehaviour
     protected virtual void MoveLimit()
     {
 
-        if (transform.localPosition.x < GameManager.instance.MinPosition.x - 2f || transform.localPosition.x > GameManager.instance.MaxPosition.x + 2f)
+        if (transform.localPosition.x < GameManager.Instance.MinPosition.x - 2f || transform.localPosition.x > GameManager.Instance.MaxPosition.x + 2f)
         {
             Destroy(gameObject);
         }
-        if (transform.localPosition.y < GameManager.instance.MinPosition.y - 5f || transform.localPosition.y > GameManager.instance.MaxPosition.y + 5f)
+        if (transform.localPosition.y < GameManager.Instance.MinPosition.y - 5f || transform.localPosition.y > GameManager.Instance.MaxPosition.y + 5f)
         {
             Destroy(gameObject);
         }

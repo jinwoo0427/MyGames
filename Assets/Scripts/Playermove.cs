@@ -43,7 +43,7 @@ public class Playermove : MonoBehaviour
     void Update()
     {
         Move();
-        if (GameManager.instance.isskill == false)
+        if (GameManager.Instance.isskill == false)
         {
             Shot();
         }
@@ -58,7 +58,7 @@ public class Playermove : MonoBehaviour
     {
 
 
-        if (GameManager.instance.isskill == true)
+        if (GameManager.Instance.isskill == true)
             return;
 
         shotDelay += Time.deltaTime;
@@ -124,8 +124,8 @@ public class Playermove : MonoBehaviour
         {
             SoundManager.instance.CoinSound();
             Coin coinScript = collision.gameObject.GetComponent<Coin>();
-            GameManager.instance.coin += coinScript.coinSize;
-            GameManager.instance.UpdateScore();
+            GameManager.Instance.coin += coinScript.coinSize;
+            GameManager.Instance.UpdateScore();
             
             Destroy(collision.gameObject);
 
@@ -138,10 +138,10 @@ public class Playermove : MonoBehaviour
             Destroy(collision.gameObject);
             Instantiate(explosion, transform.position, Quaternion.identity);
 
-            if (GameManager.instance.life > 1)
+            if (GameManager.Instance.life > 1)
             {
-                GameManager.instance.life--;
-                GameManager.instance.UpdateLife();
+                GameManager.Instance.life--;
+                GameManager.Instance.UpdateLife();
                 StartCoroutine(Damaged());
             }
             else
@@ -168,7 +168,7 @@ public class Playermove : MonoBehaviour
     }
     private IEnumerator Dead()
     {
-        PlayerPrefs.SetInt("Score", GameManager.instance.coin);
+        PlayerPrefs.SetInt("Score", GameManager.Instance.coin);
 
         animator.Play("New Animation");
         yield return new WaitForSeconds(0.5f);

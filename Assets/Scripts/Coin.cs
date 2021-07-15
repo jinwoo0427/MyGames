@@ -24,8 +24,8 @@ public class Coin : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            GameManager.instance.coin += coinSize;
-            GameManager.instance.UpdateScore();
+            GameManager.Instance.coin += coinSize;
+            GameManager.Instance.UpdateScore();
             Destroy(gameObject, 0.1f);
 
         }
